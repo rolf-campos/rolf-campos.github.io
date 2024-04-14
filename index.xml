@@ -13,7 +13,7 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;p>&lt;code>ge_gravity2&lt;/code> is a Stata command that solves and simulates a gravity model with a positive supply elasticity and, more generally, economic geography models in the class of universal gravity models defined in the article by Allen, Arkolakis and Takahashi, 2020, &lt;a href="https://doi.org/10.1086/704385" target="_blank" rel="noopener">&amp;ldquo;Universal Gravity,&amp;rdquo;&lt;/a> &lt;em>Journal of Political Economy&lt;/em>, 128(2), 2020, 393&amp;ndash;433 &lt;a href="https://arkolakis.com/wp-content/uploads/research/UniversalGravity/AAT-Universal-Gravity-paper.pdf" target="_blank" rel="noopener">(ungated link)&lt;/a>.&lt;/p>
 &lt;h3 id="documentation">Documentation&lt;/h3>
 &lt;p>The documentation for the command is available in this &lt;a href="ge_gravity2.pdf">PDF&lt;/a> file. This file also describes a prototypical trade model belonging to the universal gravity class, and derives in a self-contained manner all the results needed to run counterfactual simulations, including a step-by-step explanation of the algorithm used to solve for price changes in equilibrium.&lt;/p>
-&lt;h3 id="suggested-citation">Suggested citation&lt;/h3>
+&lt;h3 id="suggested-citations">Suggested citations&lt;/h3>
 &lt;p>If you use this command in your work, consider citing&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">Campos, Rodolfo G., Reggio, Iliana, and Jacopo Timini (2024). &amp;#34;GE_GRAVITY2: Stata module to solve a gravity model within the universal gravity class,&amp;#34;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Statistical Software Components, Boston College Department of Economics, https://ideas.repec.org/c/boc/bocode/s459317.html.
@@ -25,7 +25,7 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once installed, take a look at the command&amp;rsquo;s help file by typing:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">help ge_gravity2
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stata-example">Stata example&lt;/h3>
-&lt;p>In this example we want to simulate the general equilibrium effect of the North American Free Trade Agreement (NAFTA), a trade agreement signed by Canada, Mexico, and the United States, that entered into force in 1994. We believe that the partial equilibrium effect of the trade agreement is 0.5, meaning that countries that are part of this trade agreement are expected to increase their trade flows with other members by $\exp(0.5)-1 \approx 65%$, if nothing else changes (i.e., in partial equilibrium). We want to obtain the general equilibrium effect of this agreement according to a universal gravity model, assuming a trade elasticity of 5.03 and a supply elasticity of 1.24. We can do this with the following code:&lt;/p>
+&lt;p>In this example we want to simulate the general equilibrium effect of the North American Free Trade Agreement (NAFTA), a trade agreement signed by Canada, Mexico, and the United States, that entered into force in 1994. We believe that the partial equilibrium effect of the trade agreement is 0.5, meaning that countries that are part of this trade agreement are expected to increase their trade flows with other members by exp(0.5) - 1 = 65%, if nothing else changes (i.e., in partial equilibrium). We want to obtain the general equilibrium effect of this agreement according to a universal gravity model, assuming a trade elasticity of 5.03 and a supply elasticity of 1.24. We can do this with the following code:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">clear all
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">** Load example data
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">use https://github.com/rolf-campos/ge_gravity2/raw/main/examples/ge_gravity2_example_data.dta
@@ -137,7 +137,7 @@ console.log('code block');
 &lt;p>Wowchemy supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive charts.&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-875164923" class="chart">&lt;/div>
+&lt;div id="chart-861974235" class="chart">&lt;/div>
 &lt;script>
 (function() {
 let a = setInterval( function() {
@@ -146,7 +146,7 @@ return;
 }
 clearInterval( a );
 Plotly.d3.json("./line-chart.json", function(chart) {
-Plotly.plot('chart-875164923', chart.data, chart.layout, {responsive: true});
+Plotly.plot('chart-861974235', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
