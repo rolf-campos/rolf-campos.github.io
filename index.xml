@@ -10,7 +10,7 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;li>&lt;strong>Embed&lt;/strong> your slides (e.g. Google Slides) or presentation video on this page using &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">shortcodes&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;p>Further event details, including &lt;a href="https://wowchemy.com/docs/writing-markdown-latex/" target="_blank" rel="noopener">page elements&lt;/a> such as image galleries, can be added to the body of this page.&lt;/p></description></item><item><title>ge_gravity2</title><link>https://rolf-campos.github.io/project/ge_gravity2/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>https://rolf-campos.github.io/project/ge_gravity2/</guid><description>&lt;h3 id="the-command">The command&lt;/h3>
-&lt;p>&lt;code>ge_gravity2&lt;/code> is a Stata command that solves and simulates a gravity models in the class of universal gravity models defined in the article by Allen et al (2020). It extends the Stata the command &lt;code>ge_gravity&lt;/code> (Baier et al 2019, Zylkin, 2019) by allowing users to compute the general equilibrium effects of trade policy in models with a positive supply elasticity.&lt;/p>
+&lt;p>&lt;code>ge_gravity2&lt;/code> is a Stata command that solves and simulates a gravity models in the class of universal gravity models defined in the article by Allen et al (2020). It extends the Stata command &lt;code>ge_gravity&lt;/code> (Baier et al 2019, Zylkin, 2019) by allowing users to compute the general equilibrium effects of trade policy in models with a positive supply elasticity.&lt;/p>
 &lt;h3 id="documentation">Documentation&lt;/h3>
 &lt;p>The documentation for the command is available in this &lt;a href="ge_gravity2.pdf">PDF&lt;/a> file. This file also describes a prototypical trade model belonging to the universal gravity class, and derives in a self-contained manner all the results needed to run counterfactual simulations, including a step-by-step explanation of the algorithm used to solve for price changes in equilibrium.&lt;/p>
 &lt;h3 id="suggested-citations">Suggested citations&lt;/h3>
@@ -140,7 +140,7 @@ console.log('code block');
 &lt;p>Wowchemy supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive charts.&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-798156234" class="chart">&lt;/div>
+&lt;div id="chart-169374285" class="chart">&lt;/div>
 &lt;script>
 (function() {
 let a = setInterval( function() {
@@ -149,7 +149,7 @@ return;
 }
 clearInterval( a );
 Plotly.d3.json("./line-chart.json", function(chart) {
-Plotly.plot('chart-798156234', chart.data, chart.layout, {responsive: true});
+Plotly.plot('chart-169374285', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
