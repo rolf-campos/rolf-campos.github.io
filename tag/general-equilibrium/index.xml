@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>general equilibrium | Rolf Campos</title><link>https://rolf-campos.github.io/tag/general-equilibrium/</link><atom:link href="https://rolf-campos.github.io/tag/general-equilibrium/index.xml" rel="self" type="application/rss+xml"/><description>general equilibrium</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Apr 2024 00:00:00 +0000</lastBuildDate><image><url>https://rolf-campos.github.io/media/icon_huefca6bf4a501112acd502302c982b693_1542_512x512_fill_lanczos_center_3.png</url><title>general equilibrium</title><link>https://rolf-campos.github.io/tag/general-equilibrium/</link></image><item><title>ge_gravity2</title><link>https://rolf-campos.github.io/project/ge_gravity2/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>https://rolf-campos.github.io/project/ge_gravity2/</guid><description>&lt;h3 id="the-command">The command&lt;/h3>
+&lt;p>&lt;code>ge_gravity2&lt;/code> solves and simulates a gravity model with a positive supply elasticity, as decribed in the article by Campos, Reggio, and Timini (2024). This new command can be used to simulate any model within the universal gravity framework defined by Allen et al (2020). The &lt;code>ge_gravity2&lt;/code> command extends a pre-existing command with the name &lt;code>ge_gravity&lt;/code> (Baier et al 2019; Zylkin, 2019).&lt;/p>
+&lt;h3 id="documentation">Documentation&lt;/h3>
+&lt;p>The documentation for the command is available in this &lt;a href="https://rolf-campos.github.io/project/ge_gravity2/ge_gravity2.pdf" target="_blank" rel="noopener">PDF&lt;/a> file. This file also describes a prototypical trade model belonging to the universal gravity class, and derives in a self-contained manner all the results needed to run counterfactual simulations, including a step-by-step explanation of the algorithm used to solve for price changes in equilibrium.&lt;/p>
+&lt;h3 id="suggested-citations">Suggested citations&lt;/h3>
+&lt;p>If you use this command in your work, consider citing&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">Campos, Rodolfo G., Iliana Reggio, and Jacopo Timini (2024). &amp;#34;GE_GRAVITY2: Stata module to solve a gravity model within the universal gravity class,&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Statistical Software Components, Boston College Department of Economics, https://ideas.repec.org/c/boc/bocode/s459317.html.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">Campos, Rodolfo G., Iliana Reggio, and Jacopo Timini (2024). &amp;#34;ge_gravity2: a command for solving universal gravity models,&amp;#34; arXiv:2404.09180.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="installation">Installation&lt;/h3>
+&lt;p>The latest version of the command can be installed directly from within Stata:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ssc install ge_gravity2, replace
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once installed, take a look at the command&amp;rsquo;s help file by typing:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">help ge_gravity2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stata-example">Stata example&lt;/h3>
+&lt;p>In this example we want to simulate the general equilibrium effect of the North American Free Trade Agreement (NAFTA), a trade agreement signed by Canada, Mexico, and the United States, that entered into force in 1994. We believe that the partial equilibrium effect of the trade agreement is 0.5, meaning that countries that are part of this trade agreement are expected to increase their trade flows with other members by exp(0.5) - 1 = 65%, if nothing else changes (i.e., in partial equilibrium). We want to obtain the general equilibrium effect of this agreement according to a universal gravity model, assuming a trade elasticity of 5.03 and a supply elasticity of 1.24. We can do this with the following code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">clear all
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">** Load example data
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">use https://github.com/rolf-campos/ge_gravity2/raw/main/examples/ge_gravity2_example_data.dta
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">describe
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">** Generate an indicator of NAFTA
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gen nafta = 0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">replace nafta = 1 if iso_o == &amp;#34;CAN&amp;#34; &amp;amp; (iso_d == &amp;#34;MEX&amp;#34; | iso_d == &amp;#34;USA&amp;#34;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">replace nafta = 1 if iso_o == &amp;#34;MEX&amp;#34; &amp;amp; (iso_d == &amp;#34;CAN&amp;#34; | iso_d == &amp;#34;USA&amp;#34;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">replace nafta = 1 if iso_o == &amp;#34;USA&amp;#34; &amp;amp; (iso_d == &amp;#34;CAN&amp;#34; | iso_d == &amp;#34;MEX&amp;#34;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">** Generate the partial equilibrium effect of NAFTA
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">local beta = 0.500
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gen partial_effect = `beta&amp;#39; * nafta
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">** Obtain general equilibrium effects of NAFTA and report a table with results.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">** We use a trade elasticity of 5.03 and a supply elasticity of 1.24.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ge_gravity2 iso_o iso_d flow partial_effect if year==1990, theta(5.03) psi(1.24) results
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To see all output that was generated by the command run&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ereturn list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="references">References&lt;/h3>
+&lt;p>Allen, T., C. Arkolakis and Y. Takahashi, 2020, &lt;a href="https://doi.org/10.1086/704385" target="_blank" rel="noopener">Universal Gravity&lt;/a>, &lt;em>Journal of Political Economy&lt;/em>, 128(2), 2020, 393-433 &lt;a href="https://arkolakis.com/wp-content/uploads/research/UniversalGravity/AAT-Universal-Gravity-paper.pdf" target="_blank" rel="noopener">(ungated link)&lt;/a>&lt;/p>
+&lt;p>Baier, S. L., Y. V. Yotov, and T. Zylkin (2019), &lt;a href="https://doi.org/10.1016/j.jinteco.2018.11.002" target="_blank" rel="noopener">On the widely differing effects of free trade agreements: Lessons from twenty years of trade integration&lt;/a>, &lt;em>Journal of International Economics&lt;/em>, 116, 206–226.&lt;/p>
+&lt;p>Campos, R. G., I. Reggio, and J. Timini (2024), ge_gravity2: a command for solving universal gravity models, &lt;a href="https://arxiv.org/abs/2404.09180" target="_blank" rel="noopener">arXiv:2404.09180&lt;/a>.&lt;/p>
+&lt;p>Zylkin, T. (2019), GE_GRAVITY: Stata module to solve a simple general equilibrium one sector Armington-CES trade model, Statistical Software Components, Boston College Department of Economics, &lt;a href="https://ideas.repec.org/c/boc/bocode/s458678.html" target="_blank" rel="noopener">https://ideas.repec.org/c/boc/bocode/s458678.html&lt;/a>.&lt;/p></description></item></channel></rss>
