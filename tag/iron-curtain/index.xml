@@ -10,7 +10,7 @@
 &lt;/ol>
 &lt;p>To merge it with TRADHIST, place the file &lt;code>east_data_for_merging.dta&lt;/code> in the same directory as &lt;code>TRADHIST_v4&lt;/code> and execute the following commands:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">use TRADHIST_v4.dta, clear
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">merge 1:1 using east_data_for_merging.dta
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">merge 1:1 iso_o iso_d year using east_data_for_merging.dta
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">drop _merge
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="country-files">Country files&lt;/h3>
 &lt;p>The complete set of observations collected from primary sources is available in separate files. A description of variables is given in the first sheet of the Excel file &lt;a href="east_data.xslx">east_data.xslx&lt;/a>.&lt;/p>
