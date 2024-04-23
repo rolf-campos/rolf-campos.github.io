@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>trade | Rolf Campos</title><link>https://rolf-campos.github.io/tag/trade/</link><atom:link href="https://rolf-campos.github.io/tag/trade/index.xml" rel="self" type="application/rss+xml"/><description>trade</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Apr 2024 00:00:00 +0000</lastBuildDate><image><url>https://rolf-campos.github.io/media/icon_huefca6bf4a501112acd502302c982b693_1542_512x512_fill_lanczos_center_3.png</url><title>trade</title><link>https://rolf-campos.github.io/tag/trade/</link></image><item><title>ge_gravity2</title><link>https://rolf-campos.github.io/project/ge_gravity2/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>https://rolf-campos.github.io/project/ge_gravity2/</guid><description>&lt;h3 id="the-command">The command&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>trade | Rolf Campos</title><link>https://rolf-campos.github.io/tag/trade/</link><atom:link href="https://rolf-campos.github.io/tag/trade/index.xml" rel="self" type="application/rss+xml"/><description>trade</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 23 Apr 2024 00:00:00 +0000</lastBuildDate><image><url>https://rolf-campos.github.io/media/icon_huefca6bf4a501112acd502302c982b693_1542_512x512_fill_lanczos_center_3.png</url><title>trade</title><link>https://rolf-campos.github.io/tag/trade/</link></image><item><title>Bilateral trade data for East bloc countries</title><link>https://rolf-campos.github.io/project/east_data/</link><pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate><guid>https://rolf-campos.github.io/project/east_data/</guid><description>&lt;h3 id="single-file-to-merge-with-tradhist-version-4">Single file to merge with TRADHIST (version 4)&lt;/h3>
+&lt;ul>
+&lt;li>Comma-separated values: &lt;a href="east_data_for_merging.csv">east_data_for_merging.csv&lt;/a>&lt;/li>
+&lt;li>Stata format: &lt;a href="east_data_for_merging.dta">east_data_for_merging.dta&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>These files contain only a subset of the data we collected. This subset is selected so that merging it with TRADHIST will will replace data only in two cases:&lt;/p>
+&lt;ol>
+&lt;li>if an observation has East Germany or the USSR as the importing country and if the value in TRADHIST is reported by the exporting country;&lt;/li>
+&lt;li>if data for a particular country pair and year are missing in TRADHIST.&lt;/li>
+&lt;/ol>
+&lt;p>To merge it with TRADHIST, place the file &lt;code>east_data_for_merging.dta&lt;/code> in the same directory as &lt;code>TRADHIST_v4&lt;/code> and execute the following commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">use TRADHIST_v4.dta, clear
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">merge 1:1 using east_data_for_merging.dta
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">drop _merge
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="country-files">Country files&lt;/h3>
+&lt;p>The complete set of observations collected from primary sources is available in separate files. A description of variables is given in the first sheet of the Excel file &lt;a href="east_data.xslx">east_data.xslx&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>East Germany&lt;/strong> (1950-1974)
+&lt;ul>
+&lt;li>Comma-separated values: &lt;a href="edeu.csv">edeu.csv&lt;/a>&lt;/li>
+&lt;li>Stata format: &lt;a href="edeu.dta">edeu.dta&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>East Germany&lt;/strong> (&lt;strong>non-directional&lt;/strong>, 1950-1988): flows reported are the sum of the value bilateral exports and imports
+&lt;ul>
+&lt;li>Comma-separated values: &lt;a href="edeu_total.csv">edeu_total.csv&lt;/a>&lt;/li>
+&lt;li>Stata format: &lt;a href="edeu_total.dta">edeu_total.dta&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>USSR&lt;/strong> (1950-1988)
+&lt;ul>
+&lt;li>Comma-separated values: &lt;a href="ussr.csv">ussr.csv&lt;/a>&lt;/li>
+&lt;li>Stata format: &lt;a href="ussr.dta">ussr.dta&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>All countries&lt;/strong>
+&lt;ul>
+&lt;li>Excel format: &lt;a href="east_data.xslx">east_data.xslx&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="sources">Sources&lt;/h3>
+&lt;p>Bilateral trade flows for East Germany are collected from yearly issues of the statistical yearbooks of the German Democratic Republic (Statistisches Jahrbuch der Deutschen Demokratischen Republik). Bilateral trade flows for the USSR are collected from the yearly foreign trade statistical reviews for the USSR (Внешняя торговля СССР (Статистический обзор))&lt;/p>
+&lt;h3 id="methodology">Methodology&lt;/h3>
+&lt;p>We replicate the exact steps that the IMF would have performed to include these bilateral trade flows in its DOTS database if it had had access to the data in the statistical yearbooks. We use the exchange rates as reported in the IMF&amp;rsquo;s International Financial Statistics (IFS), or the official exchange rate if it is unavailable to convert trade values from local currency to US dollars. We also make the adjustment for c.i.f./f.o.b discrepancies recommended by the DOTS methodology (IMF, 2003). In accordance with the general practice of DOTS, we update estimates to the latest published value when there are revisions from one year to the next. We verified that export values obtained in this way are virtually identical to the values reported in DOTS for the years in which they are available for East Germany and the Soviet Union. For an extended discussion of the methodology see Campos et al. (2024)&lt;/p>
+&lt;h3 id="references">References&lt;/h3>
+&lt;p>&lt;strong>Campos, Rodolfo G., Benedikt Heid, and Jacopo Timini (1994)&lt;/strong>: The economic consequences of geopolitical fragmentation: Evidence from the Cold War, &lt;a href="https://arxiv.org/abs/2404.03508" target="_blank" rel="noopener">arXiv:2404.03508&lt;/a> [econ.GN].&lt;/p>
+&lt;p>&lt;strong>International Monetary Fund (1993)&lt;/strong>: A Guide to Direction of Trade Statistics, USA: International
+Monetary Fund.&lt;/p>
+&lt;h3 id="acknowledgments">Acknowledgments&lt;/h3>
+&lt;p>We thank Rodrigo Peña for his assistance in transcribing the data and Marina Diakonova for help in locating the digitized copies of the statistical reports on foreign trade of the USSR.&lt;/p></description></item><item><title>ge_gravity2</title><link>https://rolf-campos.github.io/project/ge_gravity2/</link><pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate><guid>https://rolf-campos.github.io/project/ge_gravity2/</guid><description>&lt;h3 id="the-command">The command&lt;/h3>
 &lt;p>&lt;code>ge_gravity2&lt;/code> solves and simulates a gravity model with a positive supply elasticity, as decribed in the article by Campos, Reggio, and Timini (2024). This new command can be used to simulate any model within the universal gravity framework defined by Allen et al (2020). The &lt;code>ge_gravity2&lt;/code> command extends a pre-existing command with the name &lt;code>ge_gravity&lt;/code> (Baier et al 2019; Zylkin, 2019).&lt;/p>
 &lt;h3 id="documentation">Documentation&lt;/h3>
 &lt;p>The documentation for the command is available in this &lt;a href="https://rolf-campos.github.io/project/ge_gravity2/ge_gravity2.pdf" target="_blank" rel="noopener">PDF&lt;/a> file. This file also describes a prototypical trade model belonging to the universal gravity class, and derives in a self-contained manner all the results needed to run counterfactual simulations, including a step-by-step explanation of the algorithm used to solve for price changes in equilibrium.&lt;/p>
