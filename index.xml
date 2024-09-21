@@ -38,28 +38,38 @@ Click on the &lt;strong>Slides&lt;/strong> button above to view the built-in sli
 &lt;ul>
 &lt;li>Comma-separated values: &lt;a href="edeu.csv">edeu.csv&lt;/a>&lt;/li>
 &lt;li>Stata format: &lt;a href="edeu.dta">edeu.dta&lt;/a>&lt;/li>
+&lt;li>Notes: exports of East Germany use f.o.b. valuation, imports of East Germany were converted to c.i.f. valuation&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>East Germany&lt;/strong> (&lt;strong>non-directional&lt;/strong>, 1950-1988): flows reported are the sum of the value bilateral exports and imports
+&lt;li>&lt;strong>East Germany&lt;/strong> (&lt;strong>non-directional&lt;/strong>, 1950-1988)
 &lt;ul>
 &lt;li>Comma-separated values: &lt;a href="edeu_total.csv">edeu_total.csv&lt;/a>&lt;/li>
 &lt;li>Stata format: &lt;a href="edeu_total.dta">edeu_total.dta&lt;/a>&lt;/li>
+&lt;li>Notes: flows reported are the sum of the value bilateral exports and imports, all flows use f.o.b. valuation&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Trade flows between East and West Germany&lt;/strong> (West German source, 1948-1989)
+&lt;ul>
+&lt;li>Comma-separated values: &lt;a href="innerdeutsch.csv">innerdeutsch.csv&lt;/a>&lt;/li>
+&lt;li>Stata format: &lt;a href="innerdeutsch.dta">innerdeutsch.dta&lt;/a>&lt;/li>
+&lt;li>Notes: exports of West Germany use f.o.b. valuation, imports of West Germany use c.i.f. valuation&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>USSR&lt;/strong> (1950-1988)
 &lt;ul>
 &lt;li>Comma-separated values: &lt;a href="ussr.csv">ussr.csv&lt;/a>&lt;/li>
 &lt;li>Stata format: &lt;a href="ussr.dta">ussr.dta&lt;/a>&lt;/li>
+&lt;li>Notes: exports of the USSR use f.o.b. valuation, imports of the USSR were converted to c.i.f. valuation&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>All countries&lt;/strong>
 &lt;ul>
-&lt;li>Excel format: &lt;a href="east_data.xslx">east_data.xslx&lt;/a>&lt;/li>
+&lt;li>Excel format: &lt;a href="east_data.xlsx">east_data.xlsx&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
 &lt;h3 id="sources">Sources&lt;/h3>
-&lt;p>Bilateral trade flows for the GDR are collected from the annual editions of the &lt;em>Statistisches Jahrbuch der Deutschen Demokratischen Republik&lt;/em>. Bilateral trade flows for the USSR are collected from the annual statistical yearbooks for foreign trade for the USSR (Внешняя торговля СССР (Статистический обзор)).&lt;/p>
+&lt;p>Bilateral trade flows for the GDR are collected from the annual editions of the &lt;em>Statistisches Jahrbuch der Deutschen Demokratischen Republik&lt;/em>. Bilateral trade flows for the USSR are collected from the annual statistical yearbooks for foreign trade for the USSR (Внешняя торговля СССР (Статистический обзор)). Trade flows between East and West Germany (West German source) are from the West German Statistical Office (Statistisches Bundesamt).&lt;/p>
 &lt;h3 id="methodology">Methodology&lt;/h3>
 &lt;p>We replicate the exact steps that the IMF would have taken to include these bilateral trade flows in its DOTS database, had it had access to the data in the statistical yearbooks. We use the exchange rates reported in the IMF&amp;rsquo;s International Financial Statistics (IFS), or the official exchange rate if it is not available, to convert trade values from local currency to U.S. dollars. We also make the adjustment for c.i.f./f.o.b. discrepancies recommended by the DOTS methodology (IMF, 2003). In line with general DOTS practice, we update estimates to the latest published value when there are revisions from one year to the next. We have verified that the export values obtained in this way are virtually identical to those reported in DOTS for the years for which they are available for East Germany and the Soviet Union. For a detailed discussion of the methodology, see Campos et al. (2024).&lt;/p>
 &lt;h3 id="references">References&lt;/h3>
@@ -200,7 +210,7 @@ console.log('code block');
 &lt;p>Wowchemy supports the popular &lt;a href="https://plot.ly/" target="_blank" rel="noopener">Plotly&lt;/a> format for interactive charts.&lt;/p>
 &lt;p>Save your Plotly JSON in your page folder, for example &lt;code>line-chart.json&lt;/code>, and then add the &lt;code>{{&amp;lt; chart data=&amp;quot;line-chart&amp;quot; &amp;gt;}}&lt;/code> shortcode where you would like the chart to appear.&lt;/p>
 &lt;p>Demo:&lt;/p>
-&lt;div id="chart-126853947" class="chart">&lt;/div>
+&lt;div id="chart-574369128" class="chart">&lt;/div>
 &lt;script>
 (function() {
 let a = setInterval( function() {
@@ -209,7 +219,7 @@ return;
 }
 clearInterval( a );
 Plotly.d3.json("./line-chart.json", function(chart) {
-Plotly.plot('chart-126853947', chart.data, chart.layout, {responsive: true});
+Plotly.plot('chart-574369128', chart.data, chart.layout, {responsive: true});
 });
 }, 500 );
 })();
